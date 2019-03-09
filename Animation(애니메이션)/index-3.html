@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            padding: 16px;
+            display: inline-block;
+            background-color: crimson;
+            color: white;
+            position: relative;
+        }
+
+        @keyframes move {
+            from {
+                background-color: cadetblue;
+                left: 0;
+            }
+
+            to {
+                background-color: brown;
+                left: 100px;
+            }
+        }
+        
+        /*
+            수업시간에는 하지 않았지만 animation-fill-mode 라는 속성이 있다.
+            이것은 애니메이션이 시작되기 전 대기할 때 그리고 종료 했을 때
+            css를 어떻게 적용할 것인가를 정한다.
+        
+            none : 기본 값으로 대기 중일 때는 기본 css를 적용하고 애니메이션 종료되었을 때 다시 기본 css로 돌아온다.
+            
+            forwards: 대기 중일 때는 기본 css를 적용하고 애니메이션이 종료되었을 때 to에 있는 css가 적용된다.
+        
+            backwards: 대기 중일 때 from에 있는 css가 적용되고 종료되었을 때 기본 css로 돌아온다.
+        
+            both: 대기 중일 때 from에 있는 css가 적용되고 종료되었을 때 to에 있는 css가 적용된다.
+        
+        */
+        
+        .fill-none {
+            animation-name: move;
+            animation-fill-mode: none;
+            animation-delay: 2s;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+
+        .forward {
+            animation-fill-mode: forwards;
+            animation-delay: 2s;
+            animation-name: move;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+
+        .backword {
+            animation-fill-mode: backwards;
+            animation-name: move;
+            animation-delay: 2s;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+
+        .both {
+            animation-fill-mode: both;
+            animation-name: move;
+            animation-delay: 2s;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+  
+    <div class='box fill-none'>
+        None
+    </div>
+    <br>
+    <div class='box forward'>
+        None
+    </div>
+    <br>
+    <div class='box backword'>
+        None
+    </div>
+    <br>
+    <div class='box both'>
+        None
+    </div>
+
+</body>
+
+</html>

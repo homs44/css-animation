@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*
+        CSS 속성을 일정 시간에 걸쳐 변경하도록 함.
+        hover와 같은 이벤트가 발생해야 시작 됨.
+        */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            /*
+            transition: property(속성) duration(지속) function(변화 속도 함수) delay(지연)
+            */
+            transition: all 2s;
+            transition-timing-function: ease;
+            /*
+            ease - 처음과 끝을 부드럽게 (기본값)
+            linear - 등속운동
+            ease-in - 처음을 느리게
+            ease-out - 마지막을 느리게
+            ease-in-out - 처음과 마지막을 느리게 준다.
+            */
+        }
+
+        .box:hover {
+            cursor: pointer;
+            left: 100px;
+            background-color: lightblue;
+        }
+
+        button {
+            padding: 8px 16px;
+            min-width: 100px;
+            background-color: white;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+            border: none;
+            margin: 8px 0;
+            transition: all .2s;
+        }
+        button:hover{
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+        
+        button:hover ~ .box2 {
+            width: 20px;
+            height: 20px;
+        }
+
+        .box2 {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            transition: all 2s;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Transient</h1>
+
+    <div class='box'>
+
+    </div>
+    
+    <br>
+    <br>
+    <br>
+
+    <button>마우스를 올려보세요</button>
+    <div class='box2'>
+
+    </div>
+</body>
+
+</html>

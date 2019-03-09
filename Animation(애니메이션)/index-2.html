@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            padding: 16px;
+            display: inline-block;
+            background-color: crimson;
+            color: white;
+            position: relative;
+        }
+
+        .circular {
+            animation-name: circular;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        
+        /*
+            @keyframes를 작성할 때 from, to 이외에도 %를 사용하여
+            애니메이션 진행정도에 따라 CSS를 적용할 수 있다.
+        */
+        @keyframes circular {
+            0% {
+                top: 0;
+                left: 0;
+            }
+
+            25% {
+                top: 0;
+                left: 100px;
+            }
+
+            50% {
+                top: 100px;
+                left: 100px;
+            }
+
+            75% {
+                top: 100px;
+                left: 0;
+            }
+
+            100% {
+                left: 0;
+                top: 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class='box circular'>
+        Test
+    </div>
+
+</body>
+
+</html>

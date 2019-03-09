@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*
+            transform은 형태를 변경 시키는 것으로 기본적으로 애니메이션과 같은 효과는 없다.
+            animation과 transition을 사용하여 애니메이션 효과를 줄 수 있다.
+        */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            transition: all 1s;
+        }
+
+        .container {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 50px;
+        }
+    
+        /*
+            translate 이동 
+        */
+        .trans-xy:hover {
+            transform: translate(20px, 20px);
+        }
+
+        .trans-x:hover {
+            transform: translateX(20px);
+        }
+
+        .trans-y:hover {
+            transform: translateY(20px);
+        }
+        
+        /*
+            scale 사이즈 변경
+        */
+        .scale-xy:hover {
+            transform: scale(2, 2);
+        }
+
+        .scale-x:hover {
+            transform: scaleX(3);
+        }
+
+        .scale-y:hover {
+            transform: scaleY(2);
+        }
+
+        /*
+            skew 왜곡 x축, y축을 기준으로 각도만큼 모양을 왜곡시킨다.
+            deg는 degree로 각도를 뜻한다.
+        */
+        .skew-x:hover {
+            transform: skewX(45deg);
+        }
+
+        .skew-y:hover {
+            transform: skewY(45deg);
+        }
+
+        /*
+            rotate은 요소를 각도만큼 회전 시킨다.
+        */
+        .rotate:hover {
+            transform: rotate(45deg);
+        }
+
+        /*
+            perspective는 원근감을 표시할 때 사용하고 값이 클수록 멀리서 보는 효과가 있다.
+            
+            transform은 여러개의 속성을 띄어쓰기롤 통해 사용할 수 있다.
+        
+            transform-origin은 transform의 기준점을 뜻한다.
+            기본값이 50% 50%로 x축으로 50%만큼 그리고 y축으로 50%만큼 내려오기 때문에
+            요소의 정중앙을 가르킨다.
+            
+            아래에서 50% 0을 하게 되면 x축으로 50% 그리고 y축으로 0이기 때문에 사각형의
+            위에 있는 변의 가운데를 가르킨다. 이 값은 transform-origin:top과 같다.
+            
+        */
+        .rotate-x:hover {
+            transform: perspective(500px) rotateX(-45deg);
+            transform-origin: top;
+            /* transform-origin: 50% 0;*/
+        }
+
+        .rotate-y:hover {
+            transform: perspective(100px) rotateY(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='box trans-xy'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box trans-x'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box trans-y'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box scale-xy'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box scale-x'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box scale-y'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box skew-x'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box skew-y'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box rotate'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box rotate-x'></div>
+    </div>
+
+    <div class='container'>
+        <div class='box rotate-y'></div>
+    </div>
+</body>
+</html>

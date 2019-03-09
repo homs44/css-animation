@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            padding: 16px;
+            display: inline-block;
+            background-color: crimson;
+            color: white;
+            position: relative;
+        }
+        
+        /*
+            animation-name : 사용할 @keyframes 이름 
+            animation-duration : 애니메이션 지속 시간
+            animation-iteration-count : 애니메이션 반복 횟수 
+            animation-direction: 에니메이션 방향
+        */
+        
+        .move {
+            animation-name: move;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+        }
+        /*
+            애니메이션을 사용하기 위해서는 @keyframes를 작성해야한다.
+            from, to에 시작과 종료시점의 CSS를 작성하면 된다.
+        
+        */
+        @keyframes move {
+            from {
+                background-color: cadetblue;
+                left: 0;
+            }
+
+            to {
+                background-color: brown;
+                left: 100px;
+            }
+        }
+        
+        /*
+            여러 개의 keyframes를 ,로 구분하여 사용할 수 있다.
+        */
+        .move-fade-out {
+            animation-name: move, fade-out;
+            animation-duration: 2s, 2s;
+            animation-iteration-count: infinite, 2;
+            animation-direction: normal, normal;
+        }
+
+        @keyframes fade-out {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class='box move'>
+        Move and Fade out
+    </div>
+    <br>
+    <br>
+    <div class='box move-fade-out'>
+        Move and Fade out
+    </div>
+</body>
+
+</html>
